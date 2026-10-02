@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output GitHub Context
-        run: echo "${{ toJSON(github) }}"
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
   test:
     runs-on: ubuntu-latest
     defaults:
