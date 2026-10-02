@@ -4,6 +4,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
 jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GitHub Context
+        run: echo "${{ toJSON(github) }}"
   test:
     runs-on: ubuntu-latest
     defaults:
